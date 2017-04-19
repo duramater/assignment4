@@ -90,9 +90,65 @@ input:-moz-placeholder {
 
 .h1 {
   color: #333;
-  font-family: 'Helvetica', sans-serif;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 45px;
   font-weight: bold;
   line-height: 45px;
   text-align: center;
+}
+
+
+h2 {
+    letter-spacing: 18px;
+	background-color: #b9cefb;
+	color: #1c30a9;
+	text-align: right;
+	text-decoration: underline;
+    -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 2s infinite;
+}
+
+ul a:link {
+    letter-spacing: 12px;
+    font-variant: small-caps;
+	text-decoration: none;
+}
+
+ul a:visited {
+    letter-spacing: 12px;
+    font-variant: small-caps;
+	text-decoration: none;
+}
+
+ul a:active {
+    letter-spacing: 20px;
+    font-variant: small-caps;
+	text-decoration: underline;
+}
+
+ul a:hover {
+    letter-spacing: 17px;
+    font-variant: small-caps;
+	text-decoration: underline;
+}
+
+.searchList {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 24px;
+	background-color: #ebeefa;
+	text-align: center;
+	padding: 22px;
+	border-radius: 15px;
+	border-style: solid;
+	border-width: 5px;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    35% {box-shadow: 25px 20px 30px #ffa042;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    35% {box-shadow: 25px 20px 30px #ffa042;}
 }

@@ -15,3 +15,33 @@
   // Magic!
   console.log('Keepin\'n it clean with an external script!');
 })();
+
+(function () {
+	$('.flexsearch-input').keyup(function () {
+		$.ajax({
+			type: 'GET',
+			dataType: 'json',
+			url: "http://www.mattbowytz.com/simple_api.json?data=all"
+		}).done(function (data) {
+			var curr = $('.flexsearch-input').val().toLowerCase();
+			var searchList = '';
+			$.each(data.data, function (heading, listing) {
+				var varList = '';
+				$.each(data.data[heading], function (index, listing) {
+					if (listing.toLowerCase().indexOf(curr) === 0) {
+						varList = varList + '<ul><li> <a href="http://google.com/#q=' + listing + '" target="_blank">' + listing + '</a></li></ul>';
+					}
+				});
+				if (varList.length > 0) {
+					searchList += '<h2>' + heading.toUpperCase() + '</h2>';
+					searchList += '<ul>' + varList.italics() + '</ul>';
+				}
+				else {
+					searchList = '';
+				}
+			});
+			$.fx.speeds.xslow = 3000;
+			$('.searchList').html(searchList);
+		});
+	});
+})();
